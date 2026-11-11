@@ -1,6 +1,7 @@
 /* Placeholder */
 :root {
   /* Colección: NeuroEval / Prototipo - color */
+  /* --- PALETA DE COLORES --- */
   --color-primary: #2563EB;
   --color-tint: #EFF6FF;
   --color-border: #BFDBFE;
@@ -10,13 +11,13 @@
   --color-warning: #FEF3C7;
   --color-white: #FFFFFF;
 
-  /* Colección: NeuroEval / Prototipo - space */
+  /* --- ESPACIADOS (Colección: NeuroEval / Prototipo) --- */
   --space-8: 8px;
   --space-12: 12px;
   --space-16: 16px;
   --space-24: 24px;
   --space-32: 32px;
 
-  /* Colección: NeuroEval / Prototipo - radius */
+  /* --- RADIOS DE BORDE (Colección: NeuroEval / Prototipo) --- */
   --radius-card: 12px;
 }
