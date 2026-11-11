@@ -8,7 +8,7 @@
 </head>
 <body style="background-color: var(--color-surface); padding: var(--space-16);">
 
-    <!-- ENCABEZADO -->
+    <!-- ENCABEZADO (Mantenemos tu diseño personalizado intacto) -->
     <header style="margin-bottom: var(--space-24); position: relative; display: flex; justify-content: space-between; align-items: flex-start; overflow: visible;">
         
         <!-- Bloque de Textos -->
@@ -30,65 +30,63 @@
     </header>
 
     <main>
-        <!-- BUSCADOR -->
-        <div class="search-container">
-            <!-- Icono de lupa posicionado de forma absoluta (Reemplazar con SVG de Figma) -->
-            <span style="position: absolute; left: 12px; top: 12px; color: var(--color-muted);">🔍</span>
-            <input type="text" class="search-input" placeholder="Busca el diagnóstico a consultar...">
+        <!-- COMPONENTE: Buscador (Actualizado a la librería general) -->
+        <div class="search-bar-container">
+            <div style="position: relative; flex: 1;">
+                <span style="position: absolute; left: 12px; top: 12px; color: var(--color-muted);">🔍</span>
+                <input type="text" class="search-input" placeholder="Busca el diagnóstico a consultar...">
+            </div>
+            <!-- Como esta es la pantalla inicial, omitimos el botón de filtro extra aquí, el flex: 1 hará que ocupe todo el ancho -->
         </div>
 
-        <!-- LISTA DE LESIONES -->
+        <!-- LISTA DE LESIONES (Actualizado a Card Button de la librería) -->
         
-        <!-- 1. Lesión encefálica adquirida (Esta nos llevará a la siguiente pantalla) -->
-        <a href="lesion-encefalica.html" class="nav-card">
-            <!-- <div class="nav-icon">🧠</div> -->
-            <div class="nav-icon">
+        <!-- 1. Lesión encefálica adquirida -->
+        <a href="lesion-encefalica.html" class="card-button">
+            <div class="card-icon" style="background-color: transparent;"> <!-- Fondo transparente para que resalte tu PNG -->
                 <img src="../assets/pantallaPrincipal/imageBrain.png" alt="Icono cerebro" style="width: 100%; height: 100%; object-fit: contain;">
             </div>
-            <div class="nav-content">
-                <h2 class="nav-title">Lesión encefálica adquirida</h2>
-                <p class="nav-subtitle">Enfermedades que influyen en el movimiento</p>
+            <div class="card-content">
+                <h2 class="card-title">Lesión encefálica adquirida</h2>
+                <p class="card-desc">Enfermedades que influyen en el movimiento</p>
             </div>
-            <div class="nav-arrow">›</div>
+            <div style="color: var(--color-primary); font-weight: bold; font-size: 20px;">›</div>
         </a>
 
         <!-- 2. Lesión medular -->
-        <a href="#" class="nav-card">
-            <!-- <div class="nav-icon">🦴</div> -->
-            <div class="nav-icon">
+        <a href="#" class="card-button">
+            <div class="card-icon" style="background-color: transparent;">
                 <img src="../assets/pantallaPrincipal/imageMarrow.png" alt="Icono vértebra" style="width: 100%; height: 100%; object-fit: contain;">
             </div>
-            <div class="nav-content">
-                <h2 class="nav-title">Lesión medular</h2>
-                <p class="nav-subtitle">Afectaciones de la medula espinal</p>
+            <div class="card-content">
+                <h2 class="card-title">Lesión medular</h2>
+                <p class="card-desc">Afectaciones de la medula espinal</p>
             </div>
-            <div class="nav-arrow">›</div>
+            <div style="color: var(--color-primary); font-weight: bold; font-size: 20px;">›</div>
         </a>
 
         <!-- 3. Enfermedad neurodegenerativa -->
-        <a href="#" class="nav-card">
-            <!-- <div class="nav-icon">❄️</div> -->
-            <div class="nav-icon">
+        <a href="#" class="card-button">
+            <div class="card-icon" style="background-color: transparent;">
                 <img src="../assets/pantallaPrincipal/imageNeuron.png" alt="Icono neurodegeneración" style="width: 100%; height: 100%; object-fit: contain;">
             </div>
-            <div class="nav-content">
-                <h2 class="nav-title">Enfermedad neurodegenerativa</h2>
-                <p class="nav-subtitle">Descripción</p>
+            <div class="card-content">
+                <h2 class="card-title">Enfermedad neurodegenerativa</h2>
+                <p class="card-desc">Descripción</p>
             </div>
-            <div class="nav-arrow">›</div>
+            <div style="color: var(--color-primary); font-weight: bold; font-size: 20px;">›</div>
         </a>
 
         <!-- 4. Polineuropatía -->
-        <a href="#" class="nav-card">
-            <!-- <div class="nav-icon">⚡</div> -->
-            <div class="nav-icon">
+        <a href="#" class="card-button">
+            <div class="card-icon" style="background-color: transparent;">
                 <img src="../assets/pantallaPrincipal/imageNerve.png" alt="Icono nervio" style="width: 100%; height: 100%; object-fit: contain;">
             </div>
-            <div class="nav-content">
-                <h2 class="nav-title">Polineuropatía</h2>
-                <p class="nav-subtitle">Trastornos de los nervios periféricos</p>
+            <div class="card-content">
+                <h2 class="card-title">Polineuropatía</h2>
+                <p class="card-desc">Trastornos de los nervios periféricos</p>
             </div>
-            <div class="nav-arrow">›</div>
+            <div style="color: var(--color-primary); font-weight: bold; font-size: 20px;">›</div>
         </a>
 
     </main>
