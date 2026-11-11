@@ -1,4 +1,6 @@
-/* Placeholder */
+/* Importar tipografía Montserrat de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
 :root {
   /* Colección: NeuroEval / Prototipo - color */
   /* --- PALETA DE COLORES --- */
@@ -20,4 +22,175 @@
 
   /* --- RADIOS DE BORDE (Colección: NeuroEval / Prototipo) --- */
   --radius-card: 12px;
+
+  /* --- TIPOGRAFÍA (Colección: NeuroEval / Prototipo) --- */
+  --font-main: 'Montserrat', sans-serif;
+  --color-surface-card: #FFFFFF;
+  --color-border-card: #E2E8F0; 
+}
+
+/* TIPOGRAFÍA GLOBAL */
+body {
+    font-family: var(--font-main);
+    color: var(--color-ink);
+}
+
+/* --- CLASES DE LA TARJETA DE EVALUACIÓN  --- */
+.eval-card {
+    background: var(--color-surface-card);
+    border: 1px solid var(--color-border-card);
+    border-radius: var(--radius-card);
+    padding: var(--space-16);
+    margin-bottom: var(--space-16);
+}
+
+.eval-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-12);
+}
+
+.eval-item-title {
+    font-size: 16px;
+    font-weight: 700; /* Bold */
+    margin: 0;
+}
+
+.eval-item-desc {
+    font-size: 12px;
+    font-weight: 400; /* Regular */
+    color: var(--color-muted);
+    margin-bottom: var(--space-16);
+}
+
+/* Opciones de respuesta (Radio buttons adaptados a móviles) */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-12);
+    border: 1px solid var(--color-border-card);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Ocultar el radio nativo para estilizar el contenedor */
+.radio-option input[type="radio"] {
+    display: none;
+}
+
+/* Estilo cuando la opción está seleccionada  */
+.radio-option:has(input[type="radio"]:checked) {
+    border-color: var(--color-primary);
+    background-color: var(--color-tint);
+}
+
+.radio-label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.radio-points {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* --- BARRA DE BÚSQUEDA --- */
+.search-input {
+    width: 100%;
+    padding: 12px 16px 12px 40px; 
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: var(--color-surface-card);
+    font-family: var(--font-main);
+    font-size: 14px;
+    color: var(--color-ink);
+    margin-bottom: var(--space-24);
+    box-sizing: border-box;
+}
+
+.search-input::placeholder {
+    color: var(--color-muted);
+}
+
+.search-container {
+    position: relative;
+}
+
+/* --- TARJETAS DE NAVEGACIÓN (Menú de lesiones) --- */
+.nav-card {
+    display: flex;
+    align-items: center;
+    padding: var(--space-16);
+    background-color: var(--color-surface-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    text-decoration: none; 
+    margin-bottom: var(--space-12);
+    transition: border-color 0.2s ease;
+}
+
+.nav-card:active {
+    border-color: var(--color-primary);
+    background-color: var(--color-tint);
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: var(--space-16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-tint);
+    border-radius: 8px;
+    color: var(--color-primary);
+    font-size: 20px;
+}
+
+.nav-content {
+    flex: 1; 
+}
+
+.nav-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-ink);
+    margin: 0 0 4px 0;
+}
+
+.nav-subtitle {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-muted);
+    margin: 0;
+}
+
+.nav-arrow {
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* --- LISTAS DENTRO DE LAS TARJETAS DE NAVEGACIÓN --- */
+.nav-list {
+    list-style-type: disc; 
+    padding-left: 16px; 
+    margin: 4px 0 0 0;
+    color: var(--color-muted);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.nav-list li {
+    margin-bottom: 2px; 
 }
