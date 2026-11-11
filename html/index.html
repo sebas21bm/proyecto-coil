@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FisiEVAL - Consulta de lesiones</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body style="background-color: var(--color-surface); padding: var(--space-16);">
+
+    <!-- ENCABEZADO -->
+    <header style="margin-bottom: var(--space-24); position: relative;">
+        <span style="color: var(--color-primary); font-weight: 700; font-size: 12px;">FisiEVAL</span>
+        <h1 style="font-size: 28px; font-weight: 800; color: var(--color-ink); margin: 4px 0 8px 0;">
+            Consulta de<br>lesiones
+        </h1>
+        <p style="font-size: 14px; color: var(--color-muted); margin: 0; max-width: 70%;">
+            Herramientas y procedimientos de evaluación en fisioterapia.
+        </p>
+        
+        <!-- Aquí iría la ilustración del cuerpo humano que tienen arriba a la derecha -->
+        <div style="position: absolute; right: 0; top: 0; width: 80px; height: 100px; opacity: 0.5;">
+            <!-- <img src="assets/body-illustration.svg" alt="Ilustración"> -->
+        </div>
+    </header>
+
+    <main>
+        <!-- BUSCADOR -->
+        <div class="search-container">
+            <!-- Icono de lupa posicionado de forma absoluta (Reemplazar con SVG de Figma) -->
+            <span style="position: absolute; left: 12px; top: 12px; color: var(--color-muted);">🔍</span>
+            <input type="text" class="search-input" placeholder="Busca el diagnóstico a consultar...">
+        </div>
+
+        <!-- LISTA DE LESIONES -->
+        
+        <!-- 1. Lesión encefálica adquirida (Esta nos llevará a la siguiente pantalla) -->
+        <a href="lesion-encefalica.html" class="nav-card">
+            <div class="nav-icon">🧠</div>
+            <div class="nav-content">
+                <h2 class="nav-title">Lesión encefálica adquirida</h2>
+                <p class="nav-subtitle">Enfermedades que influyen en el movimiento</p>
+            </div>
+            <div class="nav-arrow">›</div>
+        </a>
+
+        <!-- 2. Lesión medular -->
+        <a href="#" class="nav-card">
+            <div class="nav-icon">🦴</div>
+            <div class="nav-content">
+                <h2 class="nav-title">Lesión medular</h2>
+                <p class="nav-subtitle">Afectaciones de la medula espinal</p>
+            </div>
+            <div class="nav-arrow">›</div>
+        </a>
+
+        <!-- 3. Enfermedad neurodegenerativa -->
+        <a href="#" class="nav-card">
+            <div class="nav-icon">❄️</div>
+            <div class="nav-content">
+                <h2 class="nav-title">Enfermedad neurodegenerativa</h2>
+                <p class="nav-subtitle">Descripción</p>
+            </div>
+            <div class="nav-arrow">›</div>
+        </a>
+
+        <!-- 4. Polineuropatía -->
+        <a href="#" class="nav-card">
+            <div class="nav-icon">⚡</div>
+            <div class="nav-content">
+                <h2 class="nav-title">Polineuropatía</h2>
+                <p class="nav-subtitle">Trastornos de los nervios periféricos</p>
+            </div>
+            <div class="nav-arrow">›</div>
+        </a>
+
+    </main>
+
+</body>
+</html>
