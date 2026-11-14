@@ -2,94 +2,81 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>FisiEVAL - Consulta de lesiones</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FisioEVAL - Consulta de lesiones</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body style="background-color: var(--color-surface); padding: var(--space-16);">
+<body class="app-body">
 
-    <!-- ENCABEZADO (Mantenemos tu diseño personalizado intacto) -->
-    <header style="margin-bottom: var(--space-24); position: relative; display: flex; justify-content: space-between; align-items: flex-start; overflow: visible;">
-        
-        <!-- Bloque de Textos -->
-        <div style="position: relative; z-index: 2; max-width: 65%;">
-            <span style="color: #0066FF; font-weight: 700; font-size: 12px; letter-spacing: 0.5px;">FisioEVAL</span>
-            <h1 style="font-size: 26px; font-weight: 800; color: var(--color-ink); margin: 6px 0 8px 0; line-height: 1.2;">
-                Consulta de<br>lesiones
-            </h1>
-            <p style="font-size: 14px; color: var(--color-muted); margin: 0; line-height: 1.4;">
-                Herramientas y procedimientos<br>de evaluación en fisioterapia.
-            </p>
-        </div>
+    <main class="screen screen--home">
 
-        <!-- Ilustración del cuerpo humano con fondo circular -->
-        <div style="position: absolute; right: -10px; top: -15px; width: 130px; height: 130px; background-color: #E6F2FF; border-radius: 50%; z-index: 1; display: flex; justify-content: center; align-items: center;">
-            <img src="../assets/pantallaPrincipal/imageBody.png" alt="Ilustración cuerpo" style="width: 110%; height: 110%; object-fit: contain; margin-top: 15px; margin-left: -15px;">
-        </div>
+        <!-- ENCABEZADO / HERO -->
+        <header class="hero">
+            <div class="hero-text">
+                <p class="hero-brand">FisioEVAL</p>
+                <h1 class="hero-title">Consulta de lesiones</h1>
+                <p class="hero-desc">Herramientas y procedimientos de evaluación en fisioterapia.</p>
+            </div>
+            <div class="hero-image">
+                <img src="../assets/pantallaPrincipal/imageBody.png" alt="">
+            </div>
+        </header>
 
-    </header>
-
-    <main>
-        <!-- COMPONENTE: Buscador (Actualizado a la librería general) -->
+        <!-- COMPONENTE: Buscador -->
         <div class="search-bar-container">
-            <div style="position: relative; flex: 1;">
-                <span style="position: absolute; left: 12px; top: 12px; color: var(--color-muted);">🔍</span>
-                <input type="text" class="search-input" placeholder="Busca el diagnóstico a consultar...">
-            </div>
-            <!-- Como esta es la pantalla inicial, omitimos el botón de filtro extra aquí, el flex: 1 hará que ocupe todo el ancho -->
+            <label class="search-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg>
+                <input type="search" class="search-input" placeholder="Busca el diagnóstico a consultar..." aria-label="Buscar diagnóstico" data-search="lista-lesiones">
+            </label>
         </div>
 
-        <!-- LISTA DE LESIONES (Actualizado a Card Button de la librería) -->
-        
-        <!-- 1. Lesión encefálica adquirida -->
-        <a href="lesion-encefalica.html" class="card-button">
-            <div class="card-icon" style="background-color: transparent;"> <!-- Fondo transparente para que resalte tu PNG -->
-                <img src="../assets/pantallaPrincipal/imageBrain.png" alt="Icono cerebro" style="width: 100%; height: 100%; object-fit: contain;">
-            </div>
-            <div class="card-content">
-                <h2 class="card-title">Lesión encefálica adquirida</h2>
-                <p class="card-desc">Enfermedades que influyen en el movimiento</p>
-            </div>
-            <div style="color: var(--color-primary); font-weight: bold; font-size: 20px;">›</div>
-        </a>
+        <!-- LISTA DE LESIONES (Card Button con borde) -->
+        <nav class="card-list" id="lista-lesiones" aria-label="Diagnósticos">
 
-        <!-- 2. Lesión medular -->
-        <a href="#" class="card-button">
-            <div class="card-icon" style="background-color: transparent;">
-                <img src="../assets/pantallaPrincipal/imageMarrow.png" alt="Icono vértebra" style="width: 100%; height: 100%; object-fit: contain;">
-            </div>
-            <div class="card-content">
-                <h2 class="card-title">Lesión medular</h2>
-                <p class="card-desc">Afectaciones de la medula espinal</p>
-            </div>
-            <div style="color: var(--color-primary); font-weight: bold; font-size: 20px;">›</div>
-        </a>
+            <!-- 1. Lesión encefálica adquirida -->
+            <a href="lesion-encefalica.html" class="card-button card-button--outlined">
+                <div class="card-icon"><img src="../assets/pantallaPrincipal/imageBrain.png" alt=""></div>
+                <div class="card-content">
+                    <h2 class="card-title">Lesión encefálica adquirida</h2>
+                    <p class="card-desc">Enfermedades que influyen en el movimiento</p>
+                </div>
+                <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+            </a>
 
-        <!-- 3. Enfermedad neurodegenerativa -->
-        <a href="#" class="card-button">
-            <div class="card-icon" style="background-color: transparent;">
-                <img src="../assets/pantallaPrincipal/imageNeuron.png" alt="Icono neurodegeneración" style="width: 100%; height: 100%; object-fit: contain;">
-            </div>
-            <div class="card-content">
-                <h2 class="card-title">Enfermedad neurodegenerativa</h2>
-                <p class="card-desc">Descripción</p>
-            </div>
-            <div style="color: var(--color-primary); font-weight: bold; font-size: 20px;">›</div>
-        </a>
+            <!-- 2. Lesión medular (fuera del alcance del módulo AVD) -->
+            <a href="#" class="card-button card-button--outlined" data-coming-soon="Lesión medular">
+                <div class="card-icon"><img src="../assets/pantallaPrincipal/imageMarrow.png" alt=""></div>
+                <div class="card-content">
+                    <h2 class="card-title">Lesión medular</h2>
+                    <p class="card-desc">Afectaciones de la médula espinal</p>
+                </div>
+                <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+            </a>
 
-        <!-- 4. Polineuropatía -->
-        <a href="#" class="card-button">
-            <div class="card-icon" style="background-color: transparent;">
-                <img src="../assets/pantallaPrincipal/imageNerve.png" alt="Icono nervio" style="width: 100%; height: 100%; object-fit: contain;">
-            </div>
-            <div class="card-content">
-                <h2 class="card-title">Polineuropatía</h2>
-                <p class="card-desc">Trastornos de los nervios periféricos</p>
-            </div>
-            <div style="color: var(--color-primary); font-weight: bold; font-size: 20px;">›</div>
-        </a>
+            <!-- 3. Enfermedad neurodegenerativa (fuera del alcance del módulo AVD) -->
+            <a href="#" class="card-button card-button--outlined" data-coming-soon="Enfermedad neurodegenerativa">
+                <div class="card-icon"><img src="../assets/pantallaPrincipal/imageNeuron.png" alt=""></div>
+                <div class="card-content">
+                    <h2 class="card-title">Enfermedad neurodegenerativa</h2>
+                    <p class="card-desc">Descripción</p>
+                </div>
+                <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+            </a>
 
+            <!-- 4. Polineuropatía (fuera del alcance del módulo AVD) -->
+            <a href="#" class="card-button card-button--outlined" data-coming-soon="Polineuropatía">
+                <div class="card-icon"><img src="../assets/pantallaPrincipal/imageNerve.png" alt=""></div>
+                <div class="card-content">
+                    <h2 class="card-title">Polineuropatía</h2>
+                    <p class="card-desc">Trastornos de los nervios periféricos</p>
+                </div>
+                <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+            </a>
+        </nav>
+
+        <p class="empty-state" data-empty-for="lista-lesiones">No encontramos diagnósticos con ese nombre.</p>
     </main>
 
+    <script src="../js/app.js"></script>
 </body>
 </html>
