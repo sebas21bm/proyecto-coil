@@ -1,38 +1,70 @@
-/* Importar tipografía Montserrat de Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+/* Tipografías del archivo de Figma "Prototipo NeuroEval":
+   Inter (texto de interfaz), Nunito Sans (escalas y filtros) y Montserrat (migas de pan) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@300;400;700;900&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 :root {
   /* Colección: NeuroEval / Prototipo - color */
   /* --- PALETA DE COLORES --- */
-  --color-primary: #2563EB;
-  --color-tint: #EFF6FF;
-  --color-border: #BFDBFE;
-  --color-ink: #0F172A;
+  --color-primary: #2563EB;        /* Primario 1 */
+  --color-primary-2: #3B82F6;      /* Primario 2 */
+  --color-tint: #EFF6FF;           /* Primario 5 */
+  --color-border: #BFDBFE;         /* Primario 4 */
+  --color-ink: #0F172A;            /* Neutral - Oscuro 1 */
+  --color-ink-2: #1E293B;          /* Neutral - Oscuro 2 */
   --color-muted: #334155;
-  --color-surface: #F8FAFC;
+  --color-muted-2: #74748B;        /* Neutral - Oscuro 4 */
+  --color-placeholder: #94A3B8;    /* Neutral - Claro 5 */
+  --color-surface: #F8FAFC;        /* Neutral - Claro 1 */
   --color-warning: #FEF3C7;
   --color-white: #FFFFFF;
+
+  /* Colores de componentes (tomados de los mockups) */
+  --color-navy: #061750;           /* Títulos de encabezado y tarjetas */
+  --color-secondary: #7C3AED;      /* Secundario 1 (miga activa) */
+  --color-secondary-btn: #821FF4;  /* Botón "Limpiar filtros" */
+  --color-text-soft: #617198;      /* Descripciones de tarjetas */
+  --color-breadcrumb: #7A89A8;
+  --color-line: #E8EDF5;           /* Línea inferior del encabezado */
+  --color-input: #F5F7FB;          /* Fondo del buscador */
+  --color-arrow-bg: #E8F3FF;       /* Círculo de la flecha en tarjetas */
+  --gradient-card: linear-gradient(164deg, #F8F9FC 0%, #F3F6FA 100%);
+  --gradient-filter: linear-gradient(145deg, #9133FF 6%, #6814E5 94%);
+  --shadow-screen: 0 0 25px rgba(20, 51, 94, 0.08);
 
   /* --- ESPACIADOS (Colección: NeuroEval / Prototipo) --- */
   --space-8: 8px;
   --space-12: 12px;
   --space-16: 16px;
+  --space-20: 20px;
   --space-24: 24px;
   --space-32: 32px;
 
   /* --- RADIOS DE BORDE (Colección: NeuroEval / Prototipo) --- */
-  --radius-card: 12px;
+  --radius-card: 14px;
+  --radius-input: 13px;
+  --radius-button: 16px;
 
   /* --- TIPOGRAFÍA (Colección: NeuroEval / Prototipo) --- */
-  --font-main: 'Montserrat', sans-serif;
+  --font-main: 'Inter', system-ui, sans-serif;
+  --font-scale: 'Nunito Sans', 'Inter', sans-serif;
+  --font-accent: 'Montserrat', sans-serif;
+  --text-h1: 800 28px/1.2 var(--font-main);        /* Encabezados H1 */
+  --text-h3: 600 18px/1.2 var(--font-main);        /* Encabezados H3 */
+  --text-heading: 600 16px/1.2 var(--font-main);   /* Encabezados */
+  --text-ui-l: 400 16px/1.2 var(--font-main);      /* Texto de interfaz L */
+  --text-ui-m: 400 14px/1.2 var(--font-main);      /* Texto de interfaz M */
+  --text-ui-s: 400 12px/1.25 var(--font-main);     /* Texto de interfaz S */
+  --text-action: 600 14px/1.2 var(--font-main);    /* Texto acciones y apoyo L */
+
   --color-surface-card: #FFFFFF;
-  --color-border-card: #E2E8F0; 
+  --color-border-card: #E2E8F0;
 }
 
 /* TIPOGRAFÍA GLOBAL */
 body {
     font-family: var(--font-main);
     color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
 }
 
 /* --- CLASES DE LA TARJETA DE EVALUACIÓN  --- */
