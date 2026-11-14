@@ -876,6 +876,483 @@ body {
     background-color: #1D4ED8;
 }
 
+/* --- 5d. VENTANA DE MENSAJE (Component 1 "Mensaje" y PuntuacionFinal) --- */
+.modal {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    box-sizing: border-box;
+    padding: 34px 28px 28px;
+    border: 1px solid #000000;
+    border-radius: 29px;
+    background-color: var(--color-white);
+    text-align: center;
+    transform: translateY(12px) scale(0.97);
+    transition: transform 0.2s ease;
+}
+
+.overlay.is-open .modal {
+    transform: none;
+}
+
+.modal h2 {
+    margin: 0 0 20px;
+    font: 700 24px/1.2 var(--font-main);
+    color: #000000;
+}
+
+.modal p {
+    margin: 0;
+    font: var(--text-ui-l);
+    color: #000000;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 6px;
+    background: none;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background-color: var(--color-input);
+}
+
+.modal-close:focus-visible {
+    outline: 2px solid var(--color-primary-2);
+    outline-offset: 0;
+}
+
+.modal-close svg {
+    width: 22px;
+    height: 22px;
+}
+
+.modal-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+/* Variante: criterio de puntuación por ítem */
+.modal--criteria {
+    text-align: left;
+    border-color: var(--color-border);
+    border-radius: 22px;
+}
+
+.modal--criteria h2 {
+    padding-right: 30px;
+    margin-bottom: 14px;
+    font: var(--text-h3);
+    color: var(--color-navy);
+}
+
+.criteria-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.criteria-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font: var(--text-ui-m);
+    color: var(--color-ink);
+}
+
+.criteria-list b {
+    flex-shrink: 0;
+    min-width: 34px;
+    padding: 2px 6px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: var(--color-tint);
+    color: var(--color-primary);
+    text-align: center;
+}
+
+/* Variante: puntuación final */
+.modal--result {
+    max-width: 361px;
+    border-radius: 16px;
+    padding: 30px 22px 24px;
+}
+
+.modal--result h2 {
+    margin-bottom: 12px;
+    font: var(--text-ui-l);
+    font-size: 18px;
+}
+
+.result-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font: var(--text-ui-l);
+}
+
+.result-box {
+    min-width: 91px;
+    min-height: 29px;
+    padding: 2px 8px;
+    box-sizing: border-box;
+    border: 1px solid var(--color-navy);
+    background-color: rgba(242, 242, 242, 0.79);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 700 18px var(--font-main);
+    color: var(--color-navy);
+}
+
+.result-classification {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 22px;
+    font: var(--text-ui-l);
+    font-size: 18px;
+    text-align: left;
+}
+
+.result-box--wide {
+    flex: 1;
+    font-size: 14px;
+}
+
+.result-note {
+    margin-top: 14px !important;
+    font-size: 12px !important;
+    color: var(--color-text-soft) !important;
+}
+
+/* --- 5e. BOTONES DE ACCIÓN --- */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 221px;
+    min-height: 51px;
+    padding: 0 37px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: var(--radius-button);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font: var(--text-action);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1D4ED8;
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    background: none;
+    color: var(--color-secondary-btn);
+    font: var(--text-action);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #F5EFFF;
+}
+
+/* --- 5f. FICHA INFORMATIVA (Component 2 "Descripción") --- */
+.info-card {
+    padding: 24px 30px 30px;
+    border-radius: 40px;
+    background-color: var(--color-tint);
+}
+
+.info-card h2 {
+    margin: 0 0 14px;
+    font: var(--text-h1);
+    color: #000000;
+}
+
+.info-card p {
+    margin: 0;
+    font: 400 17px/1.3 var(--font-main);
+    color: #000000;
+}
+
+.info-card p + p {
+    margin-top: 10px;
+}
+
+.info-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.info-fact {
+    padding: 10px 6px;
+    border: 0.8px solid var(--color-line);
+    border-radius: 12px;
+    background-color: var(--color-surface);
+    text-align: center;
+}
+
+.info-fact strong {
+    display: block;
+    font: 700 18px var(--font-main);
+    color: var(--color-navy);
+}
+
+.info-fact span {
+    font: var(--text-ui-s);
+    font-size: 11px;
+    color: var(--color-text-soft);
+}
+
+.screen-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: var(--space-8);
+}
+
+/* --- 5g. PANTALLA DE EVALUACIÓN (ItemRowBotton / ScorechipBarthel) --- */
+.app-header--scale h1 {
+    font-family: var(--font-scale);
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: -0.57px;
+}
+
+.eval-instruction {
+    margin: 0;
+    font: 400 14px var(--font-scale);
+    color: #000000;
+    text-align: center;
+}
+
+.eval-subtitle {
+    margin: 0;
+    padding: 12px 0;
+    border-bottom: 0.8px solid var(--color-line);
+    font: 400 16px var(--font-scale);
+    color: var(--color-navy);
+    text-align: center;
+}
+
+.eval-progress {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    font: var(--text-ui-s);
+    color: var(--color-text-soft);
+}
+
+.eval-progress-bar {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background-color: var(--color-line);
+    overflow: hidden;
+}
+
+.eval-progress-bar span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background-color: var(--color-primary);
+    transition: width 0.25s ease;
+}
+
+.eval-item {
+    margin: 0;
+    padding: 16px 7px 22px;
+    border: none;
+    border-radius: 12px;
+    min-width: 0;
+}
+
+.eval-item.is-missing {
+    background-color: var(--color-tint);
+}
+
+.eval-item-header {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.eval-item-name {
+    padding-left: 14px;
+    font: 400 16px var(--font-scale);
+    color: #000000;
+}
+
+.btn-info {
+    width: 28px;
+    height: 28px;
+    margin-right: 20px;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn-info:hover {
+    background-color: var(--color-input);
+    color: var(--color-primary);
+}
+
+.btn-info svg {
+    width: 21px;
+    height: 21px;
+}
+
+.score-options {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 17px;
+}
+
+.score-options--two {
+    padding: 0 70px;
+}
+
+.score-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    min-width: 30px;
+    cursor: pointer;
+}
+
+.score-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.score-dot {
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+    border: 2px solid #1E1E1E;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.score-option:hover .score-dot {
+    transform: scale(1.12);
+}
+
+.score-option input:checked + .score-dot {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+}
+
+.score-option input:focus-visible + .score-dot {
+    outline: 2px solid var(--color-primary-2);
+    outline-offset: 3px;
+}
+
+.score-value {
+    font: 16px Arial, sans-serif;
+    color: #000000;
+}
+
+/* Chips 0 / 1 (ScoreChipFIM - Escala de Lawton/Brody) */
+.score-chips {
+    display: flex;
+    justify-content: center;
+    gap: 38px;
+}
+
+.score-chip {
+    cursor: pointer;
+}
+
+.score-chip input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.score-chip span {
+    display: block;
+    width: 114px;
+    height: 22px;
+    box-sizing: border-box;
+    border: 1px solid #1E1E1E;
+    background-color: var(--color-white);
+    font: 16px/20px Arial, sans-serif;
+    color: #000000;
+    text-align: center;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.score-chip:hover span {
+    background-color: var(--color-tint);
+}
+
+.score-chip input:checked + span {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+}
+
+.score-chip input:focus-visible + span {
+    outline: 2px solid var(--color-primary-2);
+    outline-offset: 2px;
+}
+
+.eval-submit {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-16) 0 var(--space-8);
+}
+
 /* --- 6. TOAST (mensaje breve de respuesta) --- */
 .toast {
     position: fixed;

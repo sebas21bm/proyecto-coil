@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de Barthel - Evaluación - NeuroEval</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="app-body">
+
+    <main class="screen">
+
+        <!-- COMPONENTE: AppHeader con botón de regreso -->
+        <header class="app-header app-header--scale">
+            <a href="barthel.html" class="btn-back" aria-label="Volver a la ficha de Índice de Barthel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            </a>
+            <h1>Índice de Barthel</h1>
+        </header>
+
+        <p class="eval-instruction">Marque una opción por actividad</p>
+        <h2 class="eval-subtitle">Áreas/Items:</h2>
+
+        <!-- Progreso de la evaluación -->
+        <div class="eval-progress" aria-live="polite">
+            <div class="eval-progress-bar"><span></span></div>
+            <span class="eval-progress-text"></span>
+        </div>
+
+        <!-- LISTA DE ÍTEMS: se construye desde js/app.js con los datos de la escala -->
+        <form data-scale="barthel">
+            <div class="eval-items"></div>
+            <div class="eval-submit">
+                <button type="submit" class="btn-primary">Calcular Puntuación</button>
+            </div>
+        </form>
+    </main>
+
+    <!-- VENTANA: Criterio de puntuación por ítem (botón de ayuda) -->
+    <div class="overlay" id="modal-criterio" aria-hidden="true">
+        <section class="modal modal--criteria" role="dialog" aria-modal="true" aria-labelledby="titulo-criterio">
+            <button type="button" class="modal-close" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="m9.5 9.5 5 5M14.5 9.5l-5 5"/></svg></button>
+            <h2 id="titulo-criterio">Criterio</h2>
+            <ul class="criteria-list"></ul>
+        </section>
+    </div>
+
+    <!-- VENTANA: Puntuación final (PuntuacionFinal) -->
+    <div class="overlay" id="modal-resultado" aria-hidden="true">
+        <section class="modal modal--result" role="dialog" aria-modal="true" aria-labelledby="titulo-resultado">
+            <button type="button" class="modal-close" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="m9.5 9.5 5 5M14.5 9.5l-5 5"/></svg></button>
+            <h2 id="titulo-resultado">La puntuación total es:</h2>
+            <div class="result-score">
+                <span class="result-box" data-total>0</span>
+                <span data-max>pts.</span>
+            </div>
+            <div class="result-classification">
+                <span>Clasificación:</span>
+                <span class="result-box result-box--wide" data-classification></span>
+            </div>
+            <p class="result-note">Rangos: 0–20 total · 21–60 severa · 61–90 moderada · 91–99 escasa · 100 independiente.</p>
+            <div class="modal-actions">
+                <button type="button" class="btn-primary" data-reset>Nueva evaluación</button>
+                <a href="avd-basicas.html" class="btn-secondary">Volver a las pautas</a>
+            </div>
+        </section>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
