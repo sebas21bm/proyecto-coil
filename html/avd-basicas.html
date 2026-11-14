@@ -27,12 +27,16 @@
             <span class="active" aria-current="page">Básicas</span>
         </nav>
 
-        <!-- COMPONENTE: Buscador de pautas -->
+        <!-- COMPONENTE: Buscador de pautas con botón de filtro -->
         <div class="search-bar-container">
             <label class="search-box">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg>
                 <input type="search" class="search-input" placeholder="Buscar una pauta" aria-label="Buscar una pauta" data-search="lista-pautas">
             </label>
+            <button type="button" class="btn-filter" data-open="modal-filtros" aria-label="Abrir filtros">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+                <span class="btn-filter-badge" hidden></span>
+            </button>
         </div>
 
         <!-- LISTA DE PAUTAS (Card Button) -->
@@ -58,6 +62,64 @@
 
         <p class="empty-state" data-empty-for="lista-pautas">No hay pautas que coincidan con tu búsqueda.</p>
     </main>
+
+    <!-- COMPONENTE: Dialog de filtros (hoja inferior) -->
+    <div class="overlay overlay--sheet" id="modal-filtros" data-list="lista-pautas" aria-hidden="true">
+        <section class="filter-sheet" role="dialog" aria-modal="true" aria-labelledby="titulo-filtros">
+            <div class="sheet-handle"></div>
+            <header class="sheet-header">
+                <h2 id="titulo-filtros">Filtros</h2>
+                <button type="button" class="sheet-close" data-close aria-label="Cerrar filtros">&times;</button>
+            </header>
+
+            <div class="sheet-body">
+                <h3>Tipo de contenido</h3>
+                <p class="sheet-help">Selecciona el tipo de evaluación que deseas ver.</p>
+
+                <div class="filter-options">
+                    <label class="filter-option">
+                        <input type="checkbox" name="tipo" value="herramienta" checked>
+                        <span class="filter-option-icon filter-option-icon--purple">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.3 5.3L4 17v3h3l5.4-5.4a4 4 0 0 0 5.3-5.3l-2.5 2.5-2.5-.5-.5-2.5z"/></svg>
+                        </span>
+                        <span><strong>Herramienta de evaluación</strong><small>Aplicaciones o recursos para realizar la evaluación.</small></span>
+                        <span class="filter-check" aria-hidden="true">&check;</span>
+                    </label>
+
+                    <label class="filter-option">
+                        <input type="checkbox" name="tipo" value="instrumento" checked>
+                        <span class="filter-option-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6M9 9h2"/></svg>
+                        </span>
+                        <span><strong>Instrumento de evaluación</strong><small>Escalas, pruebas o cuestionarios estandarizados.</small></span>
+                        <span class="filter-check" aria-hidden="true">&check;</span>
+                    </label>
+
+                    <label class="filter-option">
+                        <input type="checkbox" name="tipo" value="procedimiento">
+                        <span class="filter-option-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6M9 9h2"/></svg>
+                        </span>
+                        <span><strong>Procedimiento de evaluación</strong><small>Pasos o técnicas para realizar la evaluación.</small></span>
+                        <span class="filter-check" aria-hidden="true">&check;</span>
+                    </label>
+                </div>
+
+                <div class="sort-section">
+                    <h3>Ordenar por</h3>
+                    <div class="radio-row">
+                        <label class="radio"><input type="radio" name="orden" value="relevancia" checked><span class="radio-circle"></span>Relevancia</label>
+                        <label class="radio"><input type="radio" name="orden" value="az"><span class="radio-circle"></span>Nombre A-Z</label>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="sheet-footer">
+                <button type="button" class="btn-clear">Limpiar filtros</button>
+                <button type="button" class="btn-apply">Aplicar filtros (2)</button>
+            </footer>
+        </section>
+    </div>
 
     <script src="../js/app.js"></script>
 </body>
