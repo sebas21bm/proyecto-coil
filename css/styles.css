@@ -286,6 +286,48 @@ body {
     object-fit: contain;
 }
 
+/* --- 1b. APP HEADER (título centrado con botón de regreso) --- */
+.app-header {
+    position: relative;
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    border-bottom: 0.8px solid var(--color-line);
+}
+
+.app-header h1 {
+    font: var(--text-h3);
+    color: var(--color-navy);
+    text-align: center;
+    margin: 0;
+}
+
+.btn-back {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-navy);
+    transition: background-color 0.15s ease;
+}
+
+.btn-back:hover {
+    background-color: var(--color-input);
+}
+
+.btn-back svg {
+    width: 20px;
+    height: 20px;
+}
+
 /* --- 2. SEARCH INPUT & FILTER --- */
 .search-bar-container {
     display: flex;

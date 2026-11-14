@@ -2,117 +2,104 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Lesión encefálica adquirida - FisiEVAL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesión encefálica adquirida - FisioEVAL</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body style="background-color: var(--color-surface); padding: var(--space-16);">
+<body class="app-body">
 
-    <!-- ENCABEZADO CON BOTÓN DE REGRESO -->
-    <header style="display: flex; align-items: center; margin-bottom: var(--space-24);">
-        <a href="index.html" style="text-decoration: none; margin-right: 12px; display: flex; align-items: center;">
-            <img src="../assets/lesionEncefalica/iconBack.png" alt="Volver" style="width: 14px; height: 14px; object-fit: contain;">
-        </a>
-        <!-- TODO Resuelto: Título estandarizado según la jerarquía de la UI Biblioteca -->
-        <h1 style="font-size: 20px; font-weight: 800; color: var(--color-ink); margin: 0; line-height: 1.2;">
-            Lesión encefálica adquirida
-        </h1>
-    </header>
+    <main class="screen">
 
-    <main>
+        <!-- COMPONENTE: AppHeader con botón de regreso -->
+        <header class="app-header">
+            <a href="index.html" class="btn-back" aria-label="Volver a Consulta de lesiones">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            </a>
+            <h1>Lesión encefálica adquirida</h1>
+        </header>
+
         <!-- COMPONENTE: Buscador -->
-        <!-- TODO Resuelto: Implementación del contenedor de búsqueda reutilizable -->
         <div class="search-bar-container">
-            <div style="position: relative; flex: 1;">
-                <span style="position: absolute; left: 12px; top: 12px; color: var(--color-muted);">🔍</span>
-                <input type="text" class="search-input" placeholder="Busca un área...">
-            </div>
+            <label class="search-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg>
+                <input type="search" class="search-input" placeholder="Busca un área..." aria-label="Buscar área" data-search="lista-areas">
+            </label>
         </div>
 
-        <!-- LISTA DE ÁREAS DE EVALUACIÓN (Usando Card Button Bullets) -->
+        <!-- LISTA DE ÁREAS DE EVALUACIÓN (Card Button Bullets) -->
+        <nav class="card-list" id="lista-areas" aria-label="Áreas de evaluación">
 
-        <!-- 1. Área motora -->
-        <a href="#" class="card-button">        
-             <div class="card-icon" style="background-color: transparent;">
-                <img src="../assets/lesionEncefalica/imageBrain.png" alt="Icono área motora" style="width: 100%; height: 100%; object-fit: contain;">
-            </div> 
-            <div class="card-content">
-                <h2 class="card-title">Área motora</h2>
-                <ul class="card-bullets">
-                    <li>Extremidades superiores</li>
-                    <li>Extremidades inferiores</li>
-                    <li>Equilibrio</li>
-                    <li>Marcha</li>
-                </ul>
-            </div>
-            <div style="color: var(--color-primary); font-weight: bold; font-size: 20px;">›</div>
-        </a>
+            <!-- 1. Área motora (fuera del alcance del módulo AVD) -->
+            <a href="#" data-coming-soon="Área motora" class="card-button">
+                <div class="card-icon"><img src="../assets/lesionEncefalica/imageBrain.png" alt=""></div>
+                <div class="card-content">
+                    <h2 class="card-title">Área motora</h2>
+                    <ul class="card-bullets">
+                        <li>Extremidades superiores</li>
+                        <li>Extremidades inferiores</li>
+                        <li>Equilibrio</li>
+                        <li>Marcha</li>
+                    </ul>
+                </div>
+                <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+            </a>
+            <!-- 2. Área cognitiva (fuera del alcance del módulo AVD) -->
+            <a href="#" data-coming-soon="Área cognitiva" class="card-button">
+                <div class="card-icon"><img src="../assets/lesionEncefalica/imageBrain.png" alt=""></div>
+                <div class="card-content">
+                    <h2 class="card-title">Área cognitiva</h2>
+                    <ul class="card-bullets">
+                        <li>Funciones cognitivas básicas</li>
+                        <li>Funciones cognitivas superiores</li>
+                        <li>Evaluación de funciones frontales</li>
+                        <li>Conciencia</li>
+                    </ul>
+                </div>
+                <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+            </a>
+            <!-- 3. Área de evaluación del contexto físico (fuera del alcance del módulo AVD) -->
+            <a href="#" data-coming-soon="Área de evaluación del contexto físico" class="card-button">
+                <div class="card-icon"><img src="../assets/lesionEncefalica/imagePhysique.png" alt=""></div>
+                <div class="card-content">
+                    <h2 class="card-title">Área de evaluación del contexto físico</h2>
+                    <ul class="card-bullets">
+                        <li>Accesibilidad arquitectónica</li>
+                        <li>Requerimientos de adaptación</li>
+                        <li>Ayudas técnicas</li>
+                    </ul>
+                </div>
+                <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+            </a>
+            <!-- 4. Sensibilidad (fuera del alcance del módulo AVD) -->
+            <a href="#" data-coming-soon="Sensibilidad" class="card-button">
+                <div class="card-icon"><img src="../assets/lesionEncefalica/imageHand.png" alt=""></div>
+                <div class="card-content">
+                    <h2 class="card-title">Sensibilidad</h2>
+                    <ul class="card-bullets">
+                        <li>Sensibilidad superficial</li>
+                        <li>Sensibilidad profunda</li>
+                        <li>Mixta</li>
+                    </ul>
+                </div>
+                <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+            </a>
+            <!-- 5. Actividades de la vida diaria (módulo AVD de nuestro equipo) -->
+            <a href="menu-avd.html" class="card-button">
+                <div class="card-icon"><img src="../assets/lesionEncefalica/imagePhysique.png" alt=""></div>
+                <div class="card-content">
+                    <h2 class="card-title">Actividades de la vida diaria</h2>
+                    <ul class="card-bullets">
+                        <li>Básicas</li>
+                        <li>Instrumentales</li>
+                    </ul>
+                </div>
+                <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+            </a>
+        </nav>
 
-        <!-- 2. Área cognitiva -->
-        <a href="#" class="card-button">          
-             <div class="card-icon" style="background-color: transparent;">
-                <img src="../assets/lesionEncefalica/imageBrain.png" alt="Icono área cognitiva" style="width: 100%; height: 100%; object-fit: contain;">
-            </div> 
-            <div class="card-content">
-                <h2 class="card-title">Área cognitiva</h2>
-                <ul class="card-bullets">
-                    <li>Funciones cognitivas básicas</li>
-                    <li>Funciones cognitivas superiores</li>
-                    <li>Evaluación de funciones frontales</li>
-                    <li>Conciencia</li>
-                </ul>
-            </div>
-            <div style="color: var(--color-primary); font-weight: bold; font-size: 20px;">›</div>
-        </a>
-
-        <!-- 3. Área de evaluación del contexto físico -->
-        <a href="#" class="card-button">          
-            <div class="card-icon" style="background-color: transparent;">
-                <img src="../assets/lesionEncefalica/imagePhysique.png" alt="Icono contexto físico" style="width: 100%; height: 100%; object-fit: contain;">
-            </div> 
-            <div class="card-content">
-                <h2 class="card-title">Área de evaluación del contexto físico</h2>
-                <ul class="card-bullets">
-                    <li>Accesibilidad arquitectónica</li>
-                    <li>Requerimientos de adaptación</li>
-                    <li>Ayudas técnicas</li>
-                </ul>
-            </div>
-            <div style="color: var(--color-primary); font-weight: bold; font-size: 20px;">›</div>
-        </a>
-
-        <!-- 4. Sensibilidad -->
-        <a href="#" class="card-button">
-            <div class="card-icon" style="background-color: transparent;">
-                <img src="../assets/lesionEncefalica/imageHand.png" alt="Icono sensibilidad" style="width: 100%; height: 100%; object-fit: contain;">
-            </div>
-            <div class="card-content">
-                <h2 class="card-title">Sensibilidad</h2>
-                <ul class="card-bullets">
-                    <li>Sensibilidad superficial</li>
-                    <li>Sensibilidad profunda</li>
-                    <li>Mixta</li>
-                </ul>
-            </div>
-            <div style="color: var(--color-primary); font-weight: bold; font-size: 20px;">›</div>
-        </a>
-
-        <!-- 5. Actividades de la vida diaria (Enlace al módulo de su equipo) -->
-        <a href="menu-avd.html" class="card-button">
-            <div class="card-icon" style="background-color: transparent;">
-                <img src="../assets/lesionEncefalica/imagePhysique.png" alt="Icono AVD" style="width: 100%; height: 100%; object-fit: contain;">
-            </div> 
-            <div class="card-content">
-                <h2 class="card-title">Actividades de la vida diaria</h2>
-                <ul class="card-bullets">
-                    <li>Básicas</li>
-                    <li>Instrumentales</li>
-                </ul>
-            </div>
-            <div style="color: var(--color-primary); font-weight: bold; font-size: 20px;">›</div>
-        </a>
-
+        <p class="empty-state" data-empty-for="lista-areas">No hay áreas que coincidan con tu búsqueda.</p>
     </main>
 
+    <script src="../js/app.js"></script>
 </body>
 </html>
