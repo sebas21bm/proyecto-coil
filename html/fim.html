@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIM - NeuroEval</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="app-body">
+
+    <main class="screen">
+
+        <!-- COMPONENTE: AppHeader con botón de regreso -->
+        <header class="app-header app-header--scale">
+            <a href="avd-basicas.html" class="btn-back" aria-label="Volver a AVD Básicas">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            </a>
+            <h1>FIM</h1>
+        </header>
+
+        <!-- FICHA INFORMATIVA PREVIA (Component 2 "Descripción") -->
+        <section class="info-card" aria-labelledby="titulo-descripcion">
+            <h2 id="titulo-descripcion">Descripción</h2>
+            <p>El instrumento evalúa 18 ítems divididos en dos dominios principales: 13 motores (autocuidado, esfínteres, movilidad, locomoción) y 5 cognitivos (comunicación, interacción social). Se administra mediante un cuestionario heteroadministrado y utiliza una escala ordinal de 7 niveles (del 1 al 7), donde 1 indica asistencia total y 7 representa la independencia completa, permitiendo cuantificar la cantidad de ayuda humana necesaria para realizar las actividades de la vida diaria.</p>
+        </section>
+
+        <div class="info-facts">
+            <div class="info-fact"><strong>18</strong><span>ítems</span></div>
+            <div class="info-fact"><strong>1–7</strong><span>niveles</span></div>
+            <div class="info-fact"><strong>18–126</strong><span>puntos</span></div>
+        </div>
+
+        <!-- ACCIONES: iniciar prueba (aviso de licencia) / descripción técnica / regresar -->
+        <div class="screen-actions">
+            <button type="button" class="btn-primary" data-open="modal-licencia">Iniciar prueba</button>
+            <a href="fim-descripcion.html" class="btn-secondary">Ver descripción técnica</a>
+            <a href="avd-basicas.html" class="btn-secondary">Regresar</a>
+        </div>
+    </main>
+
+    <!-- VENTANA: Aviso de licencia "Evaluación de pago" (Component 1 "Mensaje") -->
+    <div class="overlay" id="modal-licencia" aria-hidden="true">
+        <section class="modal" role="alertdialog" aria-modal="true" aria-labelledby="titulo-mensaje" aria-describedby="texto-mensaje">
+            <button type="button" class="modal-close" data-close aria-label="Cerrar mensaje"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="m9.5 9.5 5 5M14.5 9.5l-5 5"/></svg></button>
+            <h2 id="titulo-mensaje">Mensaje</h2>
+            <p id="texto-mensaje">La evaluación FIM es únicamente posible con licencia y con pago.</p>
+            <div class="modal-actions">
+                <a href="fim-descripcion.html" class="btn-primary">Ver descripción técnica</a>
+                <button type="button" class="btn-secondary" data-close>Entendido</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

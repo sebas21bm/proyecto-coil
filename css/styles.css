@@ -1353,6 +1353,46 @@ body {
     padding: var(--space-16) 0 var(--space-8);
 }
 
+/* --- 5h. DESCRIPCIÓN TÉCNICA (Campo Descripciones - FIM) --- */
+.app-header--large h1 {
+    font-size: 36px;
+}
+
+.membership-note {
+    align-self: center;
+    margin: 0;
+    padding: 4px 12px;
+    border: 1px solid #FCD34D;
+    border-radius: 999px;
+    background-color: var(--color-warning);
+    font: 400 13px var(--font-scale);
+    color: #8A5300;
+}
+
+.field-section {
+    padding: 6px 4px 18px;
+    border-top: 1px solid #C7C7C7;
+}
+
+.field-section h2 {
+    margin: 0 0 6px;
+    font: 900 15px var(--font-main);
+    color: #000000;
+}
+
+.field-section p,
+.field-section li {
+    margin: 0;
+    font: var(--text-ui-s);
+    line-height: 1.35;
+    color: #000000;
+}
+
+.field-section ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
 /* --- 6. TOAST (mensaje breve de respuesta) --- */
 .toast {
     position: fixed;
