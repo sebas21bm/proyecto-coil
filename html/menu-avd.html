@@ -2,71 +2,69 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Menú General AVD - NeuroEval</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades de la vida diaria - NeuroEval</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body style="background-color: var(--color-surface); padding: var(--space-16);">
+<body class="app-body">
 
-    <header style="margin-bottom: var(--space-24);">
-        <!-- COMPONENTE: Breadcrumb -->
-        <div class="breadcrumb">
-            <a href="index.html" style="color: var(--color-muted); text-decoration: none;">Inicio</a> &gt;
-            <a href="lesion-encefalica.html" style="color: var(--color-muted); text-decoration: none;">Lesión encefálica</a> &gt;
-            <span class="active">AVD</span>
-        </div>
-        
-        <div style="display: flex; align-items: center; margin-top: var(--space-8);">
-            <!-- <a href="lesion-encefalica.html" style="text-decoration: none; font-size: 24px; color: var(--color-ink); margin-right: 12px;">←</a> -->
-            <a href="lesion-encefalica.html" style="text-decoration: none; margin-right: 12px; display: flex; align-items: center;">
-                <img src="../assets/lesionEncefalica/iconBack.png" alt="Volver" style="width: 14px; height: 14px; object-fit: contain;">
+    <main class="screen">
+
+        <!-- COMPONENTE: AppHeader con botón de regreso -->
+        <header class="app-header">
+            <a href="lesion-encefalica.html" class="btn-back" aria-label="Volver a Lesión encefálica adquirida">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
             </a>
-            <h1 style="font-size: 24px; font-weight: 800; color: var(--color-ink); margin: 0;">Actividades de la vida diaria</h1>
-        </div>
-        <p style="font-size: 14px; color: var(--color-muted); margin-top: 8px;">
-            Seleccione la categoría de evaluación para el paciente.
-        </p>
-    </header>
+            <h1>Actividades de la vida diaria</h1>
+        </header>
 
-    <main>
-        <!-- COMPONENTE: Buscador con Filtro -->
-        <!-- Resuelve la necesidad de agilizar la búsqueda y selección de una evaluación en específico -->
+        <!-- COMPONENTE: Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+            <a href="lesion-encefalica.html">Lesión encefálica adquirida</a>
+            <svg class="breadcrumb-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+            <span class="active" aria-current="page">Actividades de la vida diaria</span>
+        </nav>
+
+        <!-- COMPONENTE: Buscador -->
         <div class="search-bar-container">
-            <div style="position: relative; flex: 1;">
-                <span style="position: absolute; left: 12px; top: 12px; color: var(--color-muted);">🔍</span>
-                <input type="text" class="search-input" placeholder="Buscar pauta o escala...">
-            </div>
-            <button class="btn-filter" aria-label="Filtrar evaluaciones">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
-            </button>
+            <label class="search-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg>
+                <input type="search" class="search-input" placeholder="Texto ..." aria-label="Buscar categoría o escala" data-search="lista-avd">
+            </label>
         </div>
 
-        <!-- COMPONENTE: Card Button Bullets (Categoría AVD Básicas) -->
-        <a href="avd-basicas.html" class="card-button">
-            <div class="card-icon">🚶</div>
-            <div class="card-content">
-                <h2 class="card-title">AVD Básicas</h2>
-                <ul class="card-bullets">
-                    <li>Índice de Barthel</li>
-                    <li>Escala FIM</li>
-                </ul>
-            </div>
-            <div style="color: var(--color-primary); font-weight: bold; font-size: 20px;">›</div>
-        </a>
+        <!-- CATEGORÍAS AVD (Card Button Bullets) -->
+        <nav class="card-list" id="lista-avd" aria-label="Categorías de actividades de la vida diaria">
 
-        <!-- COMPONENTE: Card Button Bullets (Categoría AVD Instrumentales) -->
-        <a href="avd-instrumentales.html" class="card-button">
-            <div class="card-icon">🛒</div>
-            <div class="card-content">
-                <h2 class="card-title">AVD Instrumentales</h2>
-                <ul class="card-bullets">
-                    <li>Escala de Lawton/Brody</li>
-                    <li>Pauta Hernández Neuman</li>
-                </ul>
-            </div>
-            <div style="color: var(--color-primary); font-weight: bold; font-size: 20px;">›</div>
-        </a>
+            <!-- 1. AVD Básicas -->
+            <a href="avd-basicas.html" class="card-button">
+                <div class="card-icon"><img src="../assets/avd/imageBasicas.png" alt=""></div>
+                <div class="card-content">
+                    <h2 class="card-title">Básicas</h2>
+                    <ul class="card-bullets">
+                        <li>Índice de Barthel</li>
+                        <li>FIM</li>
+                    </ul>
+                </div>
+                <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+            </a>
+
+            <!-- 2. AVD Instrumentales -->
+            <a href="avd-instrumentales.html" class="card-button">
+                <div class="card-icon"><img src="../assets/avd/imageInstrumentales.png" alt=""></div>
+                <div class="card-content">
+                    <h2 class="card-title">Instrumentales</h2>
+                    <ul class="card-bullets">
+                        <li>Escala de Lawton/Brody</li>
+                    </ul>
+                </div>
+                <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+            </a>
+        </nav>
+
+        <p class="empty-state" data-empty-for="lista-avd">No hay categorías o escalas con ese nombre.</p>
     </main>
 
+    <script src="../js/app.js"></script>
 </body>
 </html>
