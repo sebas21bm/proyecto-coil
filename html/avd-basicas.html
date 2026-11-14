@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVD Básicas - NeuroEval</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="app-body">
+
+    <main class="screen">
+
+        <!-- COMPONENTE: AppHeader con botón de regreso -->
+        <header class="app-header">
+            <a href="menu-avd.html" class="btn-back" aria-label="Volver a Actividades de la vida diaria">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            </a>
+            <h1>Básicas</h1>
+        </header>
+
+        <!-- COMPONENTE: Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+            <a href="lesion-encefalica.html">Lesión encefálica adquirida</a>
+            <svg class="breadcrumb-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+            <a href="menu-avd.html">Actividades de la vida diaria</a>
+            <svg class="breadcrumb-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+            <span class="active" aria-current="page">Básicas</span>
+        </nav>
+
+        <!-- COMPONENTE: Buscador de pautas -->
+        <div class="search-bar-container">
+            <label class="search-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg>
+                <input type="search" class="search-input" placeholder="Buscar una pauta" aria-label="Buscar una pauta" data-search="lista-pautas">
+            </label>
+        </div>
+
+        <!-- LISTA DE PAUTAS (Card Button) -->
+        <nav class="card-list" id="lista-pautas" aria-label="Pautas de evaluación">
+
+            <!-- 1. Índice de Barthel -->
+            <a href="barthel.html" class="card-button" data-type="instrumento" data-name="Índice de Barthel">
+                <div class="card-icon"><img src="../assets/avd/imageBarthel.png" alt=""></div>
+                <div class="card-content">
+                    <h2 class="card-title">Índice de Barthel</h2>
+                </div>
+                <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+            </a>
+            <!-- 2. FIM -->
+            <a href="fim.html" class="card-button" data-type="instrumento" data-name="FIM">
+                <div class="card-icon"><img src="../assets/avd/imageFim.png" alt=""></div>
+                <div class="card-content">
+                    <h2 class="card-title">FIM</h2>
+                </div>
+                <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+            </a>
+        </nav>
+
+        <p class="empty-state" data-empty-for="lista-pautas">No hay pautas que coincidan con tu búsqueda.</p>
+    </main>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
