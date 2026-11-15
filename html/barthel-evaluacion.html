@@ -7,65 +7,161 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body class="app-body">
-
-    <main class="screen">
-
-        <!-- COMPONENTE: AppHeader con botón de regreso -->
-        <header class="app-header app-header--scale">
-            <a href="barthel.html" class="btn-back" aria-label="Volver a la ficha de Índice de Barthel">
+    <main class="screen screen--avd">
+        <!-- COMPONENTE: Encabezado / Volver -->
+        <header class="app-header app-header--dark">
+            <a href="barthel.html" class="btn-back" aria-label="Volver a la descripción de Índice de Barthel">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
             </a>
-            <h1>Índice de Barthel</h1>
+            <h1>Evaluación AVD</h1>
         </header>
 
-        <p class="eval-instruction">Marque una opción por actividad</p>
-        <h2 class="eval-subtitle">Áreas/Items:</h2>
+        <p class="overline">AVD BÁSICAS</p>
+        <h2 class="page-title">Índice de Barthel</h2>
+        <p class="page-intro">Selecciona un puntaje por actividad. Consulta el ícono de información para ver los criterios.</p>
 
-        <!-- Progreso de la evaluación -->
-        <div class="eval-progress" aria-live="polite">
-            <div class="eval-progress-bar"><span></span></div>
-            <span class="eval-progress-text"></span>
-        </div>
-
-        <!-- LISTA DE ÍTEMS: se construye desde js/app.js con los datos de la escala -->
-        <form data-scale="barthel">
-            <div class="eval-items"></div>
-            <div class="eval-submit">
-                <button type="submit" class="btn-primary">Calcular Puntuación</button>
-            </div>
+        <!-- FORMULARIO CONTINUO: todos los ítems en una sola pantalla -->
+        <form class="form-items" data-scale="barthel" novalidate>
+            <fieldset class="item-card" id="item-0">
+                <legend class="item-head">
+                    <span class="item-title">Comida</span>
+                    <button type="button" class="btn-info" data-item="0" aria-label="Consultar criterios de Comida"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11v6"/><circle cx="12" cy="7.6" r=".7" fill="currentColor"/></svg></button>
+                </legend>
+                <p class="item-desc">Capacidad para comer y manejar los alimentos.</p>
+                <div class="score-grid" role="radiogroup" aria-label="Puntaje de Comida">
+                    <label class="score-option"><input type="radio" name="item-0" value="0"><span class="score-box">0</span></label>
+                    <label class="score-option"><input type="radio" name="item-0" value="5"><span class="score-box">5</span></label>
+                    <label class="score-option"><input type="radio" name="item-0" value="10"><span class="score-box">10</span></label>
+                </div>
+            </fieldset>
+            <fieldset class="item-card" id="item-1">
+                <legend class="item-head">
+                    <span class="item-title">Lavado (baño)</span>
+                    <button type="button" class="btn-info" data-item="1" aria-label="Consultar criterios de Lavado (baño)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11v6"/><circle cx="12" cy="7.6" r=".7" fill="currentColor"/></svg></button>
+                </legend>
+                <p class="item-desc">Lavado completo y acceso al baño.</p>
+                <div class="score-grid" role="radiogroup" aria-label="Puntaje de Lavado (baño)">
+                    <label class="score-option"><input type="radio" name="item-1" value="0"><span class="score-box">0</span></label>
+                    <label class="score-option"><input type="radio" name="item-1" value="5"><span class="score-box">5</span></label>
+                </div>
+            </fieldset>
+            <fieldset class="item-card" id="item-2">
+                <legend class="item-head">
+                    <span class="item-title">Vestido</span>
+                    <button type="button" class="btn-info" data-item="2" aria-label="Consultar criterios de Vestido"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11v6"/><circle cx="12" cy="7.6" r=".7" fill="currentColor"/></svg></button>
+                </legend>
+                <p class="item-desc">Ponerse y quitarse la ropa.</p>
+                <div class="score-grid" role="radiogroup" aria-label="Puntaje de Vestido">
+                    <label class="score-option"><input type="radio" name="item-2" value="0"><span class="score-box">0</span></label>
+                    <label class="score-option"><input type="radio" name="item-2" value="5"><span class="score-box">5</span></label>
+                    <label class="score-option"><input type="radio" name="item-2" value="10"><span class="score-box">10</span></label>
+                </div>
+            </fieldset>
+            <fieldset class="item-card" id="item-3">
+                <legend class="item-head">
+                    <span class="item-title">Arreglo personal</span>
+                    <button type="button" class="btn-info" data-item="3" aria-label="Consultar criterios de Arreglo personal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11v6"/><circle cx="12" cy="7.6" r=".7" fill="currentColor"/></svg></button>
+                </legend>
+                <p class="item-desc">Actividades de higiene y cuidado personal.</p>
+                <div class="score-grid" role="radiogroup" aria-label="Puntaje de Arreglo personal">
+                    <label class="score-option"><input type="radio" name="item-3" value="0"><span class="score-box">0</span></label>
+                    <label class="score-option"><input type="radio" name="item-3" value="5"><span class="score-box">5</span></label>
+                </div>
+            </fieldset>
+            <fieldset class="item-card" id="item-4">
+                <legend class="item-head">
+                    <span class="item-title">Deposición</span>
+                    <button type="button" class="btn-info" data-item="4" aria-label="Consultar criterios de Deposición"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11v6"/><circle cx="12" cy="7.6" r=".7" fill="currentColor"/></svg></button>
+                </legend>
+                <p class="item-desc">Continencia fecal y manejo de apoyos.</p>
+                <div class="score-grid" role="radiogroup" aria-label="Puntaje de Deposición">
+                    <label class="score-option"><input type="radio" name="item-4" value="0"><span class="score-box">0</span></label>
+                    <label class="score-option"><input type="radio" name="item-4" value="5"><span class="score-box">5</span></label>
+                    <label class="score-option"><input type="radio" name="item-4" value="10"><span class="score-box">10</span></label>
+                </div>
+            </fieldset>
+            <fieldset class="item-card" id="item-5">
+                <legend class="item-head">
+                    <span class="item-title">Micción</span>
+                    <button type="button" class="btn-info" data-item="5" aria-label="Consultar criterios de Micción"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11v6"/><circle cx="12" cy="7.6" r=".7" fill="currentColor"/></svg></button>
+                </legend>
+                <p class="item-desc">Continencia urinaria y manejo de dispositivos.</p>
+                <div class="score-grid" role="radiogroup" aria-label="Puntaje de Micción">
+                    <label class="score-option"><input type="radio" name="item-5" value="0"><span class="score-box">0</span></label>
+                    <label class="score-option"><input type="radio" name="item-5" value="5"><span class="score-box">5</span></label>
+                    <label class="score-option"><input type="radio" name="item-5" value="10"><span class="score-box">10</span></label>
+                </div>
+            </fieldset>
+            <fieldset class="item-card" id="item-6">
+                <legend class="item-head">
+                    <span class="item-title">Ir al retrete</span>
+                    <button type="button" class="btn-info" data-item="6" aria-label="Consultar criterios de Ir al retrete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11v6"/><circle cx="12" cy="7.6" r=".7" fill="currentColor"/></svg></button>
+                </legend>
+                <p class="item-desc">Acceso, uso e higiene en el WC.</p>
+                <div class="score-grid" role="radiogroup" aria-label="Puntaje de Ir al retrete">
+                    <label class="score-option"><input type="radio" name="item-6" value="0"><span class="score-box">0</span></label>
+                    <label class="score-option"><input type="radio" name="item-6" value="5"><span class="score-box">5</span></label>
+                    <label class="score-option"><input type="radio" name="item-6" value="10"><span class="score-box">10</span></label>
+                </div>
+            </fieldset>
+            <fieldset class="item-card" id="item-7">
+                <legend class="item-head">
+                    <span class="item-title">Traslado cama/sillón</span>
+                    <button type="button" class="btn-info" data-item="7" aria-label="Consultar criterios de Traslado cama/sillón"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11v6"/><circle cx="12" cy="7.6" r=".7" fill="currentColor"/></svg></button>
+                </legend>
+                <p class="item-desc">Pasar de la cama a la silla y levantarse.</p>
+                <div class="score-grid" role="radiogroup" aria-label="Puntaje de Traslado cama/sillón">
+                    <label class="score-option"><input type="radio" name="item-7" value="0"><span class="score-box">0</span></label>
+                    <label class="score-option"><input type="radio" name="item-7" value="5"><span class="score-box">5</span></label>
+                    <label class="score-option"><input type="radio" name="item-7" value="10"><span class="score-box">10</span></label>
+                    <label class="score-option"><input type="radio" name="item-7" value="15"><span class="score-box">15</span></label>
+                </div>
+            </fieldset>
+            <fieldset class="item-card" id="item-8">
+                <legend class="item-head">
+                    <span class="item-title">Deambulación</span>
+                    <button type="button" class="btn-info" data-item="8" aria-label="Consultar criterios de Deambulación"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11v6"/><circle cx="12" cy="7.6" r=".7" fill="currentColor"/></svg></button>
+                </legend>
+                <p class="item-desc">Desplazarse caminando o en silla de ruedas.</p>
+                <div class="score-grid" role="radiogroup" aria-label="Puntaje de Deambulación">
+                    <label class="score-option"><input type="radio" name="item-8" value="0"><span class="score-box">0</span></label>
+                    <label class="score-option"><input type="radio" name="item-8" value="5"><span class="score-box">5</span></label>
+                    <label class="score-option"><input type="radio" name="item-8" value="10"><span class="score-box">10</span></label>
+                    <label class="score-option"><input type="radio" name="item-8" value="15"><span class="score-box">15</span></label>
+                </div>
+            </fieldset>
+            <fieldset class="item-card" id="item-9">
+                <legend class="item-head">
+                    <span class="item-title">Subir y bajar escaleras</span>
+                    <button type="button" class="btn-info" data-item="9" aria-label="Consultar criterios de Subir y bajar escaleras"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11v6"/><circle cx="12" cy="7.6" r=".7" fill="currentColor"/></svg></button>
+                </legend>
+                <p class="item-desc">Desplazarse entre pisos por escalones.</p>
+                <div class="score-grid" role="radiogroup" aria-label="Puntaje de Subir y bajar escaleras">
+                    <label class="score-option"><input type="radio" name="item-9" value="0"><span class="score-box">0</span></label>
+                    <label class="score-option"><input type="radio" name="item-9" value="5"><span class="score-box">5</span></label>
+                    <label class="score-option"><input type="radio" name="item-9" value="10"><span class="score-box">10</span></label>
+                </div>
+            </fieldset>
+            <button type="submit" class="btn-block btn-primary">Calcular puntuación</button>
+            <p class="form-note">Puedes responder en cualquier orden y cambiar tus selecciones. El resultado requiere todos los ítems.</p>
         </form>
     </main>
 
-    <!-- VENTANA: Criterio de puntuación por ítem (botón de ayuda) -->
-    <div class="overlay" id="modal-criterio" aria-hidden="true">
-        <section class="modal modal--criteria" role="dialog" aria-modal="true" aria-labelledby="titulo-criterio">
-            <button type="button" class="modal-close" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="m9.5 9.5 5 5M14.5 9.5l-5 5"/></svg></button>
-            <h2 id="titulo-criterio">Criterio</h2>
+    <!-- VENTANA: Detalle del ítem (criterios de puntuación) -->
+    <div class="overlay" id="modal-detalle" aria-hidden="true">
+        <section class="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detalle-titulo">
+            <div class="detail-header">
+                <p>Detalle del ítem</p>
+                <button type="button" class="btn-close" data-close aria-label="Cerrar ventana"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+            </div>
+            <h2 class="detail-title" id="detalle-titulo"></h2>
+            <p class="detail-desc"></p>
+            <h3 class="detail-subtitle">Criterios de puntuación</h3>
             <ul class="criteria-list"></ul>
         </section>
     </div>
 
-    <!-- VENTANA: Puntuación final (PuntuacionFinal) -->
-    <div class="overlay" id="modal-resultado" aria-hidden="true">
-        <section class="modal modal--result" role="dialog" aria-modal="true" aria-labelledby="titulo-resultado">
-            <button type="button" class="modal-close" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="m9.5 9.5 5 5M14.5 9.5l-5 5"/></svg></button>
-            <h2 id="titulo-resultado">La puntuación total es:</h2>
-            <div class="result-score">
-                <span class="result-box" data-total>0</span>
-                <span data-max>pts.</span>
-            </div>
-            <div class="result-classification">
-                <span>Clasificación:</span>
-                <span class="result-box result-box--wide" data-classification></span>
-            </div>
-            <p class="result-note">Rangos: 0–20 total · 21–60 severa · 61–90 moderada · 91–99 escasa · 100 independiente.</p>
-            <div class="modal-actions">
-                <button type="button" class="btn-primary" data-reset>Nueva evaluación</button>
-                <a href="avd-basicas.html" class="btn-secondary">Volver a las pautas</a>
-            </div>
-        </section>
-    </div>
-
+    <script src="../js/escalas.js"></script>
     <script src="../js/app.js"></script>
 </body>
 </html>

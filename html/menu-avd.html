@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividades de la vida diaria - NeuroEval</title>
+    <title>Consulta de instrumentos - NeuroEval</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="app-body">
-
-    <main class="screen">
-
-        <!-- COMPONENTE: AppHeader con botón de regreso -->
-        <header class="app-header">
+<body class="app-body" data-lesion="encefalica">
+    <main class="screen screen--avd">
+        <!-- COMPONENTE: Encabezado / Volver -->
+        <header class="app-header app-header--dark">
             <a href="lesion-encefalica.html" class="btn-back" aria-label="Volver a Lesión encefálica adquirida">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
             </a>
@@ -25,46 +23,29 @@
             <span class="active" aria-current="page">Actividades de la vida diaria</span>
         </nav>
 
-        <!-- COMPONENTE: Buscador -->
-        <div class="search-bar-container">
-            <label class="search-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg>
-                <input type="search" class="search-input" placeholder="Texto ..." aria-label="Buscar categoría o escala" data-search="lista-avd">
-            </label>
-        </div>
+        <h2 class="page-title">Consulta de instrumentos</h2>
+        <p class="page-intro">Elige el tipo de actividades de la vida diaria para ver sus instrumentos.</p>
 
-        <!-- CATEGORÍAS AVD (Card Button Bullets) -->
-        <nav class="card-list" id="lista-avd" aria-label="Categorías de actividades de la vida diaria">
-
-            <!-- 1. AVD Básicas -->
-            <a href="avd-basicas.html" class="card-button">
-                <div class="card-icon"><img src="../assets/avd/imageBasicas.png" alt=""></div>
-                <div class="card-content">
-                    <h2 class="card-title">Básicas</h2>
-                    <ul class="card-bullets">
-                        <li>Índice de Barthel</li>
-                        <li>FIM</li>
-                    </ul>
+        <!-- TIPOS DE AVD -->
+        <nav class="card-list" aria-label="Tipos de actividades de la vida diaria">
+            <a href="avd-basicas.html" class="instrument-card">
+                <div class="instrument-media"><img src="../assets/avd/imageBasicas.png" alt=""></div>
+                <div>
+                    <h2 class="instrument-name">AVD básicas</h2>
+                    <p class="instrument-desc">2 instrumentos<br>ÍNDICE DE BARTHEL · FIM</p>
                 </div>
-                <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
             </a>
-
-            <!-- 2. AVD Instrumentales -->
-            <a href="avd-instrumentales.html" class="card-button">
-                <div class="card-icon"><img src="../assets/avd/imageInstrumentales.png" alt=""></div>
-                <div class="card-content">
-                    <h2 class="card-title">Instrumentales</h2>
-                    <ul class="card-bullets">
-                        <li>Escala de Lawton/Brody</li>
-                    </ul>
+            <a href="avd-instrumentales.html" class="instrument-card">
+                <div class="instrument-media"><img src="../assets/avd/imageInstrumentales.png" alt=""></div>
+                <div>
+                    <h2 class="instrument-name">AVD instrumentales</h2>
+                    <p class="instrument-desc">1 instrumento<br>LAWTON Y BRODY</p>
                 </div>
-                <span class="card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
             </a>
         </nav>
-
-        <p class="empty-state" data-empty-for="lista-avd">No hay categorías o escalas con ese nombre.</p>
     </main>
 
+    <script src="../js/escalas.js"></script>
     <script src="../js/app.js"></script>
 </body>
 </html>

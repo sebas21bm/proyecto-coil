@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVD básicas - NeuroEval</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="app-body" data-instrument-list>
+    <main class="screen screen--avd">
+        <!-- COMPONENTE: Encabezado / Volver -->
+        <header class="app-header app-header--dark">
+            <a href="menu-avd-medular.html" class="btn-back" aria-label="Volver a Actividades de la vida diaria">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            </a>
+            <h1>AVD básicas</h1>
+        </header>
+
+        <!-- COMPONENTE: Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+            <a href="lesion-medular.html">Lesión medular</a>
+            <svg class="breadcrumb-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+            <a href="menu-avd-medular.html">Actividades de la vida diaria</a>
+            <svg class="breadcrumb-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+            <span class="active" aria-current="page">Básicas</span>
+        </nav>
+
+        <h2 class="page-title">AVD básicas</h2>
+        <p class="page-intro">Selecciona un instrumento para consultar qué evalúa y sus criterios.</p>
+
+        <!-- INSTRUMENTOS -->
+        <nav class="card-list" aria-label="Instrumentos de evaluación">
+            <a href="barthel.html" class="instrument-card">
+                <div class="instrument-media"><span class="instrument-initials" aria-hidden="true">IB</span></div>
+                <div>
+                    <h2 class="instrument-name">Índice de Barthel</h2>
+                    <p class="instrument-desc">10 ítems · 0–100 puntos<br>AVD BÁSICAS</p>
+                </div>
+            </a>
+            <a href="scim.html" class="instrument-card">
+                <div class="instrument-media"><span class="instrument-initials" aria-hidden="true">SC</span></div>
+                <div>
+                    <h2 class="instrument-name">SCIM III</h2>
+                    <p class="instrument-desc">17 ítems · 19 respuestas · 0–100 puntos<br>LESIÓN MEDULAR · AVD</p>
+                </div>
+            </a>
+            <a href="fim.html" class="instrument-card">
+                <div class="instrument-media"><img src="../assets/avd/imageFim.png" alt=""></div>
+                <div>
+                    <h2 class="instrument-name">FIM</h2>
+                    <p class="instrument-desc">18 ítems · 13 motores y 5 cognitivos<br>FICHA INFORMATIVA</p>
+                </div>
+            </a>
+        </nav>
+    </main>
+
+    <script src="../js/escalas.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
